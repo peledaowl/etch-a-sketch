@@ -67,13 +67,12 @@ button.addEventListener('click', () => {
       let height = 800 / selectedValue
       divGrid.style.width = `${width}px`
       divGrid.style.height = `${height}px`
+      let bright = 99
       divGrid.addEventListener('mouseover', () => {
-        divGrid.style.backgroundColor = 'blue';
+        divGrid.style.backgroundColor = `rgb(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256})`;
+        bright = bright - 10
+        divGrid.style.filter = `brightness(${bright}%)`
       });
-      divGrid.addEventListener('mouseout', () => {
-        divGrid.style.backgroundColor = '';
-        divGrid.style.transition = 'background 1s ease-out'
-      })
       content.appendChild(divGrid)
   }}
 })
